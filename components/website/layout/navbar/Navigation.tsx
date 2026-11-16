@@ -1,6 +1,5 @@
 import getAllCategories from "@/lib/queries/category";
 import DesktopNavigation from "./DesktopNavigation";
-import Category from "@/models/Category";
 
 async function Navigation() {
   const categories = await getAllCategories();

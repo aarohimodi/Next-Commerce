@@ -18,3 +18,21 @@ export interface CategoryResponse {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface ShopCategory {
+  _id: string;
+  name: string;
+  image: {
+    url: string;
+    public_id: string;
+  };
+}
+
+export interface NavigationCategory {
+  _id: string;
+  name: string;
+  image: {
+    url: string;
+    public_id: string;
+  };
+}

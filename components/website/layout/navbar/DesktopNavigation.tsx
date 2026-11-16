@@ -1,10 +1,11 @@
 import { CategoryResponse } from "@/types/category";
 import Link from "next/link";
+import { NavigationCategory } from "@/types/category";
 import CategoryDropdown from "./CategoryDropdown";
-
 interface DesktopNavigationProps {
-  categories: CategoryResponse[];
+  categories: NavigationCategory[];
 }
+
 function DesktopNavigation({ categories }: DesktopNavigationProps) {
   return (
     <div className="flex items-center gap-8 h-14">

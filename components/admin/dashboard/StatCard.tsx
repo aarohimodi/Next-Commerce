@@ -4,7 +4,7 @@ interface StatCardProps {
   icon: React.ReactNode;
 }
 
-function StatCard({ title, value, icon }) {
+function StatCard({ title, value, icon }: StatCardProps) {
   return (
     <>
       <div

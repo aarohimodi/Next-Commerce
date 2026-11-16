@@ -1,21 +1,11 @@
 "use client";
+import { ShopCategory } from "@/types/category";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
-interface CategoryResponse {
-  _id: string;
-  name: string;
-  image: {
-    url: string;
-    public_id: string;
-  };
-  createdBy: string;
-  createdAt: string;
-  updatedAt: string;
-}
 interface CategoriesProps {
-  categories: CategoryResponse[];
+  categories: ShopCategory[];
 }
 export default function ShopSidebar({ categories }: CategoriesProps) {
   const [minPrice, setMinPrice] = useState("");

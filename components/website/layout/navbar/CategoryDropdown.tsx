@@ -1,11 +1,10 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { CategoryResponse } from "@/types/category";
-
+import { NavigationCategory } from "@/types/category";
 interface CategoryDropdownProps {
-  categories: CategoryResponse[];
+  categories: NavigationCategory[];
 }
-
 export default function CategoryDropdown({
   categories,
 }: CategoryDropdownProps) {
