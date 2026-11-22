@@ -3,13 +3,40 @@ import wishlistServices from "@/services/wishlistServices";
 import { showNotification } from "@/store/uiSlice";
 import { openWishlist } from "@/store/wishlistSlice";
 import { Heart } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 export default function AddToWishlist({ productId }: { productId: string }) {
+  const [isWislisted, setIsWislisted] = useState(false);
+  useEffect(() => {
+    async function checkWishlist() {
+      const response = await wishlistServices.getWishlist();
+      if (response.success) {
+        const items = response.items;
+        if (items) {
+          const isProduct = items.some((i: any) => i.product._id === productId);
+          console.log(isProduct);
+          if (isProduct) {
+            setIsWislisted(true);
+          } else {
+            setIsWislisted(false);
+          }
+        }
+      }
+    }
+    checkWishlist();
+  }, [productId]);
   const dispatch = useDispatch();
   const handleWishlistButton = async () => {
-    const response = await wishlistServices.addToWishlist(productId);
+    let response;
+    if (isWislisted) {
+      response = await wishlistServices.deleteWishlist(productId);
+    } else {
+      response = await wishlistServices.addToWishlist(productId);
+    }
+
     if (response.success) {
+      setIsWislisted(!isWislisted);
       dispatch(showNotification(response.message));
 
       dispatch(openWishlist());
@@ -20,11 +47,12 @@ export default function AddToWishlist({ productId }: { productId: string }) {
     }
   };
   return (
-    <button
-      onClick={() => handleWishlistButton()}
-      className="rounded-lg border p-2"
-    >
-      <Heart size={18} />
+    <button onClick={handleWishlistButton}>
+      <Heart
+        size={18}
+        fill={isWislisted ? "red" : "none"}
+        color={isWislisted ? "red" : "currentColor"}
+      />
     </button>
   );
 }

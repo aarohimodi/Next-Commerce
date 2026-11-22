@@ -25,6 +25,7 @@ function MainHeader() {
       <UserMenu />
       <CartDrawer />
       <WishlistDrawer />
+
       <UserProfile />
       <Profile />
     </div>

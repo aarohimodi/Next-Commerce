@@ -22,7 +22,7 @@ export default function AddToCartButton({ productId }: { productId: string }) {
   return (
     <button
       onClick={() => handleAddToCart()}
-      className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-black py-2 text-white"
+      className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-black py-2 text-white text-[12px] md:text-[17px]"
     >
       <ShoppingCart size={18} /> Add to Cart
     </button>

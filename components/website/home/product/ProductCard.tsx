@@ -30,10 +30,15 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
       <div className="space-y-3 p-4">
-        <p className="text-sm text-gray-500">{product.category.name}</p>
+        <p className="text-sm text-center text-gray-500">
+          {product.category.name}
+        </p>
       </div>
-      <h3 className="line-clamp-2 font-semibold">{product.title}</h3>
-      <div className="flex items-center gap-2">
+      <div></div>
+      <h3 className="line-clamp-2 text-center font-semibold">
+        {product.title}
+      </h3>
+      <div className="flex items-center gap-2 justify-center my-2">
         <span className="text-lg font-bold"> ₹{product.price}</span>
         <span className="text-sm text-gray-400 line-through">
           ₹{product.oldPrice}

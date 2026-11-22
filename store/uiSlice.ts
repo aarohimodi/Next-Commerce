@@ -5,6 +5,7 @@ type UiState = {
   userDrawer: boolean;
   profile: boolean;
   search: string;
+  menuDrawer: boolean;
 };
 
 const initialState: UiState = {
@@ -12,12 +13,17 @@ const initialState: UiState = {
   userDrawer: false,
   profile: false,
   search: "",
+  menuDrawer: false,
 };
 
 const uiSlice = createSlice({
   name: "ui",
   initialState,
   reducers: {
+    MenuDrawerstate: (state) => {
+      state.menuDrawer = !state.menuDrawer;
+    },
+
     showNotification: (state, action) => {
       state.notification = action.payload;
     },
@@ -45,6 +51,7 @@ const uiSlice = createSlice({
 
 export const {
   showNotification,
+  MenuDrawerstate,
   hideNotification,
   openDrawer,
   closeDrawer,

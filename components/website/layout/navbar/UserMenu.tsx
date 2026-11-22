@@ -8,7 +8,7 @@ import { openDrawer } from "@/store/uiSlice";
 function UserMenu() {
   const dispatch = useDispatch();
   return (
-    <div className="hidden lg:flex items-center gap-5">
+    <div className=" flex items-center gap-5">
       <button className="hover:text-primary transition-colors">
         <Heart
           size={22}

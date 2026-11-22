@@ -48,8 +48,8 @@ export default function ProductTable({
   return (
     <tr className="hover:bg-gray-50">
       <td className="border border-gray-300 px-4 py-2">{title}</td>
-      <td>
-        <img src={images[0]?.url} className="w-20 h-20 object-cover rounded" />
+      <td className="border border-gray-300 px-4 py-2">
+        <img src={images[0]?.url} className="w-10 h-10 object-cover rounded" />
       </td>
       <td className="border border-gray-300 px-4 py-2">₹{price}</td>
       <td className="border border-gray-300 px-4 py-2">{stock}</td>
