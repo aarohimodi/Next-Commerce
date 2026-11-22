@@ -8,7 +8,7 @@ function MobileMenu() {
   const menuStatus = useSelector((state: any) => state.ui.menuDrawer);
   return (
     <button className="lg:hidden" onClick={() => dispatch(MenuDrawerstate())}>
-      {menuStatus ? "close" : <Menu size={28} />}
+      <Menu size={28} />
     </button>
   );
 }
